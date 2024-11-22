@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2017",                      // Update target to ES2017 for Object.entries support
+    "module": "es6",                         // Keep ES6 modules
+    "outDir": "./dist",                      // Redirect output to the dist directory
+    "rootDir": "./src",                      // Input files location
+    "strict": true,                          // Enable strict type-checking options
+    "esModuleInterop": true,                 // Allow default imports from CommonJS modules
+    "lib": ["es2017", "dom"]                 // Include ES2017 and DOM library
+  },
+  "include": ["src/**/*"]                    // Include all TypeScript files in the src folder
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+<!-- Main Container -->
+<div class="container mx-auto p-4">
+    <!-- Navigation -->
+    <nav class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+        <h1 class="text-2xl font-bold text-gray-800">Form Builder</h1>
+        <div class="flex gap-2">
+            <button onclick="showFormList()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                <i class="bi bi-list-ul"></i> My Forms
+            </button>
+            <button onclick="showCreateForm()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                <i class="bi bi-plus-lg"></i> Create New Form
+            </button>
+        </div>
+    </nav>
+
+    <!-- Form List View -->
+    <div id="formList" class="hidden">
+        <h2 class="text-xl font-semibold mb-4">Your Forms</h2>
+        <div id="formListContainer" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Forms will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Form Creator -->
+    <div id="formCreator" class="bg-white rounded-lg shadow p-6">
+        <input type="text" id="formTitle" placeholder="Form Title" class="w-full p-2 mb-4 border rounded">
+        <div id="formFields" class="space-y-4"></div>
+        <div class="flex flex-wrap gap-2 mt-4">
+            <button onclick="addField('text')" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                <i class="bi bi-input-cursor-text"></i> Add Text Field
+            </button>
+            <button onclick="addField('radio')" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                <i class="bi bi-record-circle"></i> Add Radio Field
+            </button>
+            <button onclick="addField('checkbox')" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+                <i class="bi bi-check-square"></i> Add Checkbox Field
+            </button>
+        </div>
+        <button onclick="saveForm()" class="mt-4 bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+            Save Form
+        </button>
+    </div>
+
+    <!-- Form Preview -->
+    <div id="formPreview" class="hidden bg-white rounded-lg shadow p-6">
+        <h2 id="previewTitle" class="text-xl font-semibold mb-4"></h2>
+        <div id="previewFields"></div>
+        <button onclick="submitForm()" class="mt-4 bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">
+            Submit
+        </button>
+    </div>
+
+    <!-- Responses View -->
+    <div id="responsesView" class="hidden bg-white rounded-lg shadow p-6">
+        <h2 class="text-xl font-semibold mb-4">Form Responses</h2>
+        <div id="responsesList"></div>
+    </div>
+</div>
+<script src="dist/main.js" defer></script>
+</body>
+</html>
